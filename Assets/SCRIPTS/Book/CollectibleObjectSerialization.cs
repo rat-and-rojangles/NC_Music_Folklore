@@ -30,4 +30,10 @@ public class CollectibleObjectSerialization : ScriptableObject {
 	public Sprite iconBlurred {
 		get { return m_iconBlurred; }
 	}
+
+	[SerializeField]
+	private AudioClip m_voiceOver;
+	public AudioClip voiceOver {
+		get { return m_voiceOver; }
+	}
 }

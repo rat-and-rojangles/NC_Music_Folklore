@@ -5,20 +5,13 @@ using UnityEngine.UI;
 
 public class Book : MonoBehaviour {
 	[SerializeField]
-	private CollectibleObjectSerialization [] debugObjects;
+	private AudioSource audioSource;
 
 	private CollectibleObject [] m_collectibleObjects = null;
 	private CollectibleObject [] collectibleObjects {
 		get {
 			if (m_collectibleObjects == null) {
 				m_collectibleObjects = GameUtility.GetAllCollectibleObjects (startingNumberUnlocked);
-
-				//debug
-				debugObjects = new CollectibleObjectSerialization [m_collectibleObjects.Length];
-				for (int x = 0; x < debugObjects.Length; x++) {
-					debugObjects [x] = m_collectibleObjects [x].ExposeSerializationDebug;
-				}
-				//end debug
 			}
 			return m_collectibleObjects;
 		}
@@ -73,7 +66,6 @@ public class Book : MonoBehaviour {
 			rightPage.Fill (collectibleObjects [1 + currentSpread * 2]);
 		}
 		else {
-			print ("fllling with blancc");
 			rightPage.Fill (GameUtility.blankPageObject);
 		}
 		RefreshButtons ();
@@ -108,6 +100,26 @@ public class Book : MonoBehaviour {
 
 	public void CloseBook () {
 		// later: make this cooler
+		audioSource.Stop ();
 		gameObject.SetActive (false);
+	}
+
+	public void PlaySound (BookPage page) {
+		audioSource.Stop ();
+		audioSource.clip = page.voiceOver;
+		audioSource.Play ();
+	}
+
+	public CollectibleObject GetCollectibleObjectFromSerialization (CollectibleObjectSerialization collectibleObjectSerialization) {
+		if (collectibleObjectSerialization == null) {
+			throw new System.InvalidOperationException ("Do not search for null");
+		}
+		CollectibleObject temp = new CollectibleObject (collectibleObjectSerialization);
+		foreach (CollectibleObject co in collectibleObjects) {
+			if (co == temp) {
+				return co;
+			}
+		}
+		throw new System.InvalidOperationException ("This serialization was not found");
 	}
 }

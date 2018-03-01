@@ -6,10 +6,6 @@ public class CollectibleObject {
 
 	private CollectibleObjectSerialization m_serialization;
 
-	public CollectibleObjectSerialization ExposeSerializationDebug {
-		get { return m_serialization; }
-	}
-
 	public bool discovered;
 
 	public CollectibleObject (CollectibleObjectSerialization collectibleObjectSerialization) {
@@ -27,6 +23,10 @@ public class CollectibleObject {
 
 	public Sprite icon {
 		get { return m_serialization.icon; }
+	}
+
+	public AudioClip voiceOver {
+		get { return m_serialization.voiceOver; }
 	}
 
 	public Sprite iconBlurred {

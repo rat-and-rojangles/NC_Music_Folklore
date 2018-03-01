@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CollectibleObjectCatalog : ScriptableObject {
-	[SerializeField]
-	private CollectibleObjectSerialization [] allCollectibleObjects;
 
 	[SerializeField]
 	private CollectibleObjectSerialization m_blankPage;
 	public CollectibleObjectSerialization blankPage {
 		get { return m_blankPage; }
 	}
+
+	[SerializeField]
+	private CollectibleObjectSerialization [] allCollectibleObjects;
 
 	/// <summary>
 	/// Return all collectible objects. 

@@ -19,3 +19,4 @@ MonoBehaviour:
 '
   m_icon: {fileID: 21300000, guid: f1c1fec4319a2f640a4b7d704de2d7ba, type: 3}
   m_iconBlurred: {fileID: 21300000, guid: d0d3aef67756ca24fa99dd90bb4d1cc7, type: 3}
+  m_voiceOver: {fileID: 8300000, guid: 7919c2f9b9dc9564e8593a9a0c73027a, type: 3}

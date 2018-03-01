@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7987e53f1350364bb865ccb3b7f0767, type: 3}
+  m_Name: SiIvaGunner
+  m_EditorClassIdentifier: 
+  m_title: SiIvaGunner
+  m_text: I only upload high quality video game rips.
+  m_icon: {fileID: 21300000, guid: a07afbeadc39a9d439cb236af8ea6456, type: 3}
+  m_iconBlurred: {fileID: 21300000, guid: 8d0f20a967710ba43b59b222ddaece7e, type: 3}
+  m_voiceOver: {fileID: 8300000, guid: 799d46c2741ea8b418c333f31855cae3, type: 3}

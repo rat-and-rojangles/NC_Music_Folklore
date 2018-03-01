@@ -16,6 +16,11 @@ public class BookPage : MonoBehaviour {
 	[SerializeField]
 	private Button speakerButton;
 
+	private AudioClip m_voiceOver;
+	public AudioClip voiceOver {
+		get { return m_voiceOver; }
+	}
+
 	/// <summary>
 	/// Fill out this page with data on an item.
 	/// </summary>
@@ -24,18 +29,21 @@ public class BookPage : MonoBehaviour {
 			titleField.text = collectibleObject.title;
 			textField.text = collectibleObject.text;
 			iconField.sprite = collectibleObject.icon;
+			m_voiceOver = null;
 			speakerButton.gameObject.SetActive (false);
 		}
 		else if (collectibleObject.discovered) {
 			titleField.text = collectibleObject.title;
 			textField.text = collectibleObject.text;
 			iconField.sprite = collectibleObject.icon;
+			m_voiceOver = collectibleObject.voiceOver;
 			speakerButton.gameObject.SetActive (true);
 		}
 		else {
 			titleField.text = "???";
 			textField.text = "";
 			iconField.sprite = collectibleObject.iconBlurred;
+			m_voiceOver = null;
 			speakerButton.gameObject.SetActive (false);
 		}
 	}
