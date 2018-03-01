@@ -12,15 +12,10 @@ MonoBehaviour:
   m_Name: Mario
   m_EditorClassIdentifier: 
   m_title: Mario
-  m_text: "The Sabri Brothers (Punjabi, Urdu: \u0635\u0627\u0628\u0631\u06CC \u0628\u0631\u0627\u062F\u0631\u0627\u0646\u202C\u200E)
-    is a music band from Pakistan performing Sufi qawwali music, closely connected
-    to the Chishti Order.Some times refers as Roving ambassador of Pakistan. The band
-    was initially founded and led by Ghulam Farid Sabri and his brother Maqbool Ahmed
-    Sabri. After the brother's death in 2011, the band was led by Ghulam Farid's son
-    Amjad Fareed Sabri who continued the qawwali tradition.\r\n\r\nThe Sabri Brothers
-    performed at New York's Carnegie Hall in 1975.[1] Sabri Brothers have given a
-    number of soulful qawwali performances globally, and their stature in the Sub-continent
-    is colossal.\r\n\r\nOn 22 June 2016, Amjad Fareed Sabri was killed in a targeted
-    killing in Karachi."
+  m_text: 'mario text
+
+    mario
+
+'
   m_icon: {fileID: 21300000, guid: f1c1fec4319a2f640a4b7d704de2d7ba, type: 3}
-  m_iconBlurred: {fileID: 21300000, guid: f1c1fec4319a2f640a4b7d704de2d7ba, type: 3}
+  m_iconBlurred: {fileID: 21300000, guid: d0d3aef67756ca24fa99dd90bb4d1cc7, type: 3}

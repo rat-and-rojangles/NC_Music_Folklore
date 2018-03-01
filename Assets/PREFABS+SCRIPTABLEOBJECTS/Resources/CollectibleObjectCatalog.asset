@@ -11,5 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85da43851ef9754bba184b4b4b37c63, type: 3}
   m_Name: CollectibleObjectCatalog
   m_EditorClassIdentifier: 
-  allCollectibleObjects: []
+  allCollectibleObjects:
+  - {fileID: 11400000, guid: 49f08933f522b484f83c6c6dfc8b4225, type: 2}
+  - {fileID: 11400000, guid: 49f08933f522b484f83c6c6dfc8b4225, type: 2}
+  - {fileID: 11400000, guid: 51272734da2839e40bd3248df4aad4c6, type: 2}
   m_blankPage: {fileID: 11400000, guid: d7f8f29c635d30d4a8395a2a3ff9dcaa, type: 2}

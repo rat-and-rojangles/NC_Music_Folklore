@@ -24,6 +24,7 @@ public class KeyEventListener : MonoBehaviour {
 			if (Input.GetKeyUp (keyCode)) {
 				onKeyUp.Invoke ();
 			}
+			yield return null;
 		}
 	}
 }

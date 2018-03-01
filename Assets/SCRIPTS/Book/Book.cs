@@ -4,11 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Book : MonoBehaviour {
+	[SerializeField]
+	private CollectibleObjectSerialization [] debugObjects;
+
 	private CollectibleObject [] m_collectibleObjects = null;
 	private CollectibleObject [] collectibleObjects {
 		get {
 			if (m_collectibleObjects == null) {
 				m_collectibleObjects = GameUtility.GetAllCollectibleObjects (startingNumberUnlocked);
+
+				//debug
+				debugObjects = new CollectibleObjectSerialization [m_collectibleObjects.Length];
+				for (int x = 0; x < debugObjects.Length; x++) {
+					debugObjects [x] = m_collectibleObjects [x].ExposeSerializationDebug;
+				}
+				//end debug
 			}
 			return m_collectibleObjects;
 		}
@@ -46,7 +56,7 @@ public class Book : MonoBehaviour {
 	/// </summary>
 	public void RefreshButtons () {
 		previousButton.interactable = currentSpread != 0;
-		nextButton.interactable = currentSpread < spreadCount;
+		nextButton.interactable = currentSpread < spreadCount - 1;
 	}
 
 	public void PreviousPage () {
@@ -63,6 +73,7 @@ public class Book : MonoBehaviour {
 			rightPage.Fill (collectibleObjects [1 + currentSpread * 2]);
 		}
 		else {
+			print ("fllling with blancc");
 			rightPage.Fill (GameUtility.blankPageObject);
 		}
 		RefreshButtons ();
@@ -79,6 +90,7 @@ public class Book : MonoBehaviour {
 					TurnToSpread (index / 2);
 					index = collectibleObjects.Length;
 				}
+				index++;
 			}
 			gameObject.SetActive (true);
 		}
@@ -89,7 +101,7 @@ public class Book : MonoBehaviour {
 	/// </summary>
 	public void OpenBook () {
 		if (!gameObject.activeSelf) {
-			RefreshButtons ();
+			TurnToSpread (currentSpread);
 			gameObject.SetActive (true);
 		}
 	}

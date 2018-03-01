@@ -6,6 +6,10 @@ public class CollectibleObject {
 
 	private CollectibleObjectSerialization m_serialization;
 
+	public CollectibleObjectSerialization ExposeSerializationDebug {
+		get { return m_serialization; }
+	}
+
 	public bool discovered;
 
 	public CollectibleObject (CollectibleObjectSerialization collectibleObjectSerialization) {
@@ -37,9 +41,25 @@ public class CollectibleObject {
 	}
 
 	public static bool operator == (CollectibleObject a, CollectibleObject b) {
-		return (object.ReferenceEquals (a, null) && object.ReferenceEquals (b, null)) || (a.m_serialization == b.m_serialization);
+		if (object.ReferenceEquals (a, null)) {         // a is null
+			return object.ReferenceEquals (b, null);
+		}
+		else {                                          // a is not null
+			if (object.ReferenceEquals (b, null)) {
+				return false;
+			}
+			return a.m_serialization == b.m_serialization;
+		}
 	}
 	public static bool operator != (CollectibleObject a, CollectibleObject b) {
-		return (!object.ReferenceEquals (a, null) && object.ReferenceEquals (b, null)) || (object.ReferenceEquals (a, null) && !object.ReferenceEquals (b, null)) || (a.m_serialization == b.m_serialization);
+		if (object.ReferenceEquals (a, null)) {         // a is null
+			return !object.ReferenceEquals (b, null);
+		}
+		else {                                          // a is not null
+			if (object.ReferenceEquals (b, null)) {
+				return true;
+			}
+			return a.m_serialization != b.m_serialization;
+		}
 	}
 }
