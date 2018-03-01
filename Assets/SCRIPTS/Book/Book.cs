@@ -45,6 +45,12 @@ public class Book : MonoBehaviour {
 	private Button previousButton;
 
 	/// <summary>
+	/// This is to keep you from mousing over world items when the book is open.
+	/// </summary>
+	[SerializeField]
+	private GameObject clickBlocker;
+
+	/// <summary>
 	/// Refreshes the active state of the next and previous buttons.
 	/// </summary>
 	public void RefreshButtons () {
@@ -75,32 +81,39 @@ public class Book : MonoBehaviour {
 	/// Open the book to the page with the object you specify.
 	/// </summary>
 	public void OpenBook (CollectibleObject openToThisPage) {
-		if (!gameObject.activeSelf) {
-			int index = 0;
-			while (index < collectibleObjects.Length) {
-				if (collectibleObjects [index] == openToThisPage) {
-					TurnToSpread (index / 2);
-					index = collectibleObjects.Length;
-				}
-				index++;
-			}
-			gameObject.SetActive (true);
-		}
+		OpenBookHelper (openToThisPage);
 	}
 
 	/// <summary>
 	/// Open the book to the last page you were on.
 	/// </summary>
 	public void OpenBook () {
+		OpenBookHelper (null);
+	}
+
+	private void OpenBookHelper (CollectibleObject openToThisPage) {
 		if (!gameObject.activeSelf) {
-			TurnToSpread (currentSpread);
+			if (openToThisPage != null) {
+				int index = 0;
+				while (index < collectibleObjects.Length) {
+					if (collectibleObjects [index] == openToThisPage) {
+						TurnToSpread (index / 2);
+						index = collectibleObjects.Length;
+					}
+					index++;
+				}
+			}
+			else {
+				TurnToSpread (currentSpread);
+			}
+			clickBlocker.SetActive (true);
 			gameObject.SetActive (true);
 		}
 	}
 
 	public void CloseBook () {
-		// later: make this cooler
 		audioSource.Stop ();
+		clickBlocker.SetActive (false);
 		gameObject.SetActive (false);
 	}
 

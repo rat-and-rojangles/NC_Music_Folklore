@@ -12,11 +12,7 @@ MonoBehaviour:
   m_Name: Lion
   m_EditorClassIdentifier: 
   m_title: Lion
-  m_text: 'Lion text
-
-    lion text
-
-'
+  m_text: In this example, this would be an item you discovered in a previous level.
   m_icon: {fileID: 21300000, guid: 891ef60e0e1e62846bcb1b1d471cf9d9, type: 3}
   m_iconBlurred: {fileID: 21300000, guid: 4c02c46a8b0aa474eacb83d75514d8d0, type: 3}
   m_voiceOver: {fileID: 8300000, guid: d898c0450109a2545af66361a17a6390, type: 3}
