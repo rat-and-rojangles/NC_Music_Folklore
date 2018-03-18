@@ -17,6 +17,8 @@ internal sealed class DefaultSpriteImport : AssetPostprocessor {
 		var importer = assetImporter as TextureImporter;
 		importer.textureType = TextureImporterType.Sprite;
 
+		importer.alphaIsTransparency = true;
+
 		importer.spriteImportMode = SpriteImportMode.Single;
 		// importer.spritePixelsPerUnit = 100f;
 		importer.wrapMode = TextureWrapMode.Repeat;

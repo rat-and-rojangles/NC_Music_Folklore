@@ -7,6 +7,31 @@ using UnityEngine.UI;
 /// Static methods useful to the game.
 /// </summary>
 public static class GameUtility {
+
+	private static SequencerClip [] m_allSequencerClips = null;
+	/// <summary>
+	/// All sequencer clips in the resources folder, sorted by length then name.
+	/// </summary>
+	/// <returns></returns>
+	public static SequencerClip [] allSequencerClips {
+		get {
+			if (m_allSequencerClips == null) {
+				m_allSequencerClips = Resources.LoadAll<SequencerClip> ("SequencerClips");
+			}
+			List<SequencerClip> tempList = new List<SequencerClip> (m_allSequencerClips);
+			tempList.Sort (CompareSequencerClips);
+			return tempList.ToArray ();
+		}
+	}
+	private static int CompareSequencerClips (SequencerClip a, SequencerClip b) {
+		if (a.length == b.length) {
+			return a.name.CompareTo (b.name);
+		}
+		else {
+			return a.length - b.length;
+		}
+	}
+
 	private static CollectibleObjectCatalog m_collectibleObjectCatalog;
 	private static CollectibleObjectCatalog collectibleObjectCatalog {
 		get {
