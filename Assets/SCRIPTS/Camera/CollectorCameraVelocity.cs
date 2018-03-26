@@ -10,6 +10,12 @@ public class CollectorCameraVelocity : MonoBehaviour {
 
 	public bool invertZoom;
 
+	/// <summary>
+	/// Used for knowing if it is OK to scroll.
+	/// </summary>
+	[SerializeField]
+	private GameObject book;
+
 	private Rigidbody m_rigidbody;
 	private new Rigidbody rigidbody {
 		get {
@@ -33,9 +39,14 @@ public class CollectorCameraVelocity : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetMouseButton (1)) {
-			rigidbody.velocity = GetDragVelocity ();
+		if (!book.activeSelf) {
+			if (Input.GetMouseButton (1)) {
+				rigidbody.velocity = GetDragVelocity ();
+			}
+			rigidbody.velocity += GetZoomAdditiveVelocity ();
 		}
-		rigidbody.velocity += GetZoomAdditiveVelocity ();
+		else {
+			rigidbody.velocity = Vector3.zero;
+		}
 	}
 }
