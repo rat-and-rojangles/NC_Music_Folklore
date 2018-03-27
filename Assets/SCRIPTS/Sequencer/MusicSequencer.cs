@@ -6,6 +6,7 @@ using UnityEngine;
 /// Custom music
 /// </summary>
 public class MusicSequencer : MonoBehaviour {
+
 	/// <summary>
 	/// Begin playback. Will always start from the beginning.
 	/// </summary>
@@ -83,10 +84,23 @@ public class MusicSequencer : MonoBehaviour {
 		}
 	}
 
+
+	[SerializeField]
+	private LoopLibrary loopLibrary;
+
+	private SequencerClip m_currentClipSelected = null;
 	/// <summary>
 	/// The thing you paint with. should never be null
 	/// </summary>
-	public SequencerClip currentClipSelected = null;
+	public SequencerClip currentClipSelected {
+		get {
+			return m_currentClipSelected;
+		}
+		set {
+			m_currentClipSelected = value;
+			loopLibrary.UpdateHighlighted ();
+		}
+	}
 	public GameObject clipButtonPrefab;
 
 	[SerializeField]
@@ -95,6 +109,13 @@ public class MusicSequencer : MonoBehaviour {
 	void Start () {
 		foreach (SequencerTrack sqt in tracks) {
 			sqt.Initialize (this);
+		}
+		if (loadFromSerialization && GameUtility.mySavedSong != null) {
+			tracks [0].LoadFromSerialization (GameUtility.mySavedSong.track0);
+			tracks [1].LoadFromSerialization (GameUtility.mySavedSong.track1);
+			tracks [2].LoadFromSerialization (GameUtility.mySavedSong.track2);
+			tracks [3].LoadFromSerialization (GameUtility.mySavedSong.track3);
+			Play ();
 		}
 	}
 
@@ -123,6 +144,20 @@ public class MusicSequencer : MonoBehaviour {
 			else {
 				return (Time.realtimeSinceStartup - playbackStartTime) / songDuration;
 			}
+		}
+	}
+
+	[SerializeField]
+	private bool loadFromSerialization;
+
+	[ContextMenu ("Save Song")]
+	public void SaveSong () {
+		if (GameUtility.mySavedSong != null) {
+			GameUtility.mySavedSong.tempo = tempo;
+			GameUtility.mySavedSong.track0 = tracks [0].clips;
+			GameUtility.mySavedSong.track1 = tracks [1].clips;
+			GameUtility.mySavedSong.track2 = tracks [2].clips;
+			GameUtility.mySavedSong.track3 = tracks [3].clips;
 		}
 	}
 

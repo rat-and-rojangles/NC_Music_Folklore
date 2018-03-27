@@ -46,7 +46,7 @@ public class SequencerTrackUI : MonoBehaviour {
 			SequencerClipButton cloneClip = clone.GetComponent<SequencerClipButton> ();
 			cloneClip.myTrackUI = this;
 			cloneClip.beatIndexInTrack = beatIndex;
-			cloneClip.button.image.sprite = mySequencer.currentClipSelected.sprite;
+			cloneClip.button.image.sprite = mySequencer.currentClipSelected.playlistSprite;
 
 			ColorBlock tempColorBlock = cloneClip.button.colors;
 			tempColorBlock.normalColor = color;

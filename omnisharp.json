@@ -16,7 +16,7 @@
         "SpaceWithinOtherParentheses": false,
         "SpaceAfterCast": true,
         "SpacesIgnoreAroundVariableDeclaration": false,
-        "SpaceBeforeOpenSquareBracket": false,
+        "SpaceBeforeOpenSquareBracket": true,
         "SpaceBetweenEmptySquareBrackets": false,
         "SpaceWithinSquareBrackets": false,
         "SpaceAfterColonInBaseTypeDeclaration": true,

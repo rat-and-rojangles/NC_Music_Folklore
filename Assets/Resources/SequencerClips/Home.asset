@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2f91f7258b40414ba31a86bb2564f33, type: 3}
   m_Name: Home
   m_EditorClassIdentifier: 
-  m_loopName: DL Home
-  m_sprite: {fileID: 21300000, guid: 891ef60e0e1e62846bcb1b1d471cf9d9, type: 3}
+  m_playlistSprite: {fileID: 21300000, guid: 8d0f20a967710ba43b59b222ddaece7e, type: 3}
+  m_bannerSprite: {fileID: 21300000, guid: 891ef60e0e1e62846bcb1b1d471cf9d9, type: 3}
   m_length: 8
   m_audioClip: {fileID: 8300000, guid: 72e1f09749d7d8742a218dd8a5cc43ec, type: 3}

@@ -11,6 +11,12 @@ public class SequencerTrack : MonoBehaviour {
 		clips = new SequencerClip [MusicSequencer.BEATS_PER_SONG];
 	}
 
+	public void LoadFromSerialization (SequencerClip [] allClips) {
+		for (int x = 0; x < clips.Length; x++) {
+			clips [x] = allClips [x];
+		}
+	}
+
 	public bool Insert (SequencerClip newClip, int beatIndex) {
 		if (newClip == null) {
 			return false;

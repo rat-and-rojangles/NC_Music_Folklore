@@ -28,7 +28,7 @@ public class SineBob : MonoBehaviour {
 			}
 		}
 		else {
-			transform.localPosition = Vector3.up;
+			transform.localPosition = Vector3.up * displacement;
 		}
 		shouldBeFloating = true;
 	}

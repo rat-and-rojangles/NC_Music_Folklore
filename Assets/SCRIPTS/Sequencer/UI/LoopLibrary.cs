@@ -10,12 +10,29 @@ public class LoopLibrary : MonoBehaviour {
 	[SerializeField]
 	private GameObject prototype;
 
+	private SequencerClipLibraryButton [] clipButtonList;
+
 	void Start () {
 		SequencerClip [] clips = GameUtility.allSequencerClips;
-		prototype.GetComponent<SequencerClipLibraryButton> ().Initialize (clips [0]);
-		musicSequencer.currentClipSelected = clips [0];
+
+		clipButtonList = new SequencerClipLibraryButton [clips.Length];
+
+		SequencerClipLibraryButton currentSCLB = prototype.GetComponent<SequencerClipLibraryButton> ();
+		currentSCLB.Initialize (clips [0]);
+		clipButtonList [0] = currentSCLB;
+
 		for (int x = 1; x < clips.Length; x++) {
-			Instantiate (prototype, transform, true).GetComponent<SequencerClipLibraryButton> ().Initialize (clips [x]);
+			currentSCLB = Instantiate (prototype, transform, true).GetComponent<SequencerClipLibraryButton> ();
+			currentSCLB.Initialize (clips [x]);
+			clipButtonList [x] = currentSCLB;
+		}
+
+		musicSequencer.currentClipSelected = clips [0];
+	}
+
+	public void UpdateHighlighted () {
+		foreach (SequencerClipLibraryButton clipButton in clipButtonList) {
+			clipButton.highlighted = clipButton.sequencerClip == musicSequencer.currentClipSelected;
 		}
 	}
 }

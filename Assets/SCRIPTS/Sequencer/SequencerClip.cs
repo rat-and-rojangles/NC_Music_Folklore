@@ -8,13 +8,24 @@ using UnityEngine;
 public class SequencerClip : ScriptableObject {
 
 	[SerializeField]
-	private Sprite m_sprite;
+	private Sprite m_playlistSprite;
 	/// <summary>
 	/// image for the playlist
 	/// </summary>
-	public Sprite sprite {
+	public Sprite playlistSprite {
 		get {
-			return m_sprite;
+			return m_playlistSprite;
+		}
+	}
+
+	[SerializeField]
+	private Sprite m_bannerSprite;
+	/// <summary>
+	/// image for the loop library. 624x200 
+	/// </summary>
+	public Sprite bannerSprite {
+		get {
+			return m_bannerSprite;
 		}
 	}
 

@@ -8,6 +8,16 @@ using UnityEngine.UI;
 /// </summary>
 public static class GameUtility {
 
+	private static SequencerSongSerialization m_mySavedSong = null;
+	public static SequencerSongSerialization mySavedSong {
+		get {
+			if (m_mySavedSong == null) {
+				m_mySavedSong = Resources.Load<SequencerSongSerialization> ("MySong");
+			}
+			return m_mySavedSong;
+		}
+	}
+
 	private static GameObject m_mapObjectTemplate = null;
 	public static GameObject mapObjectTemplate {
 		get {
@@ -18,12 +28,12 @@ public static class GameUtility {
 		}
 	}
 
-	private static SequencerClip[] m_allSequencerClips = null;
+	private static SequencerClip [] m_allSequencerClips = null;
 	/// <summary>
 	/// All sequencer clips in the resources folder, sorted by length then name.
 	/// </summary>
 	/// <returns></returns>
-	public static SequencerClip[] allSequencerClips {
+	public static SequencerClip [] allSequencerClips {
 		get {
 			if (m_allSequencerClips == null) {
 				m_allSequencerClips = Resources.LoadAll<SequencerClip> ("SequencerClips");
@@ -51,7 +61,7 @@ public static class GameUtility {
 			return m_collectibleObjectCatalog;
 		}
 	}
-	public static CollectibleObject[] GetAllCollectibleObjects (int numberDiscovered) {
+	public static CollectibleObject [] GetAllCollectibleObjects (int numberDiscovered) {
 		return collectibleObjectCatalog.GetAllCollectibleObjects (numberDiscovered);
 	}
 
