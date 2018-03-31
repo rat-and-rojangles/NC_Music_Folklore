@@ -24,6 +24,8 @@ public class MusicSequencer : MonoBehaviour {
 		foreach (SequencerTrack sqt in tracks) {
 			sqt.StopAllClips ();
 		}
+		rapPlayer.Stop ();
+
 		playbackStartTime = -1f;
 		m_isPlaying = false;
 	}
@@ -39,6 +41,7 @@ public class MusicSequencer : MonoBehaviour {
 			Play ();
 		}
 	}
+
 
 	private bool m_isPlaying = false;
 	public bool isPlaying {
@@ -106,16 +109,32 @@ public class MusicSequencer : MonoBehaviour {
 	[SerializeField]
 	private SequencerTrack [] tracks;
 
+	[SerializeField]
+	private RapPlayer rapPlayer;
+
+	[SerializeField]
+	private bool playOnAwake;
+
+	public bool rapEnabled;
+
 	void Start () {
 		foreach (SequencerTrack sqt in tracks) {
 			sqt.Initialize (this);
 		}
+
 		if (loadFromSerialization && GameUtility.mySavedSong != null) {
 			tracks [0].LoadFromSerialization (GameUtility.mySavedSong.track0);
 			tracks [1].LoadFromSerialization (GameUtility.mySavedSong.track1);
 			tracks [2].LoadFromSerialization (GameUtility.mySavedSong.track2);
 			tracks [3].LoadFromSerialization (GameUtility.mySavedSong.track3);
-			Play ();
+			rapPlayer.Initialize (this);
+
+			if (playOnAwake) {
+				Play ();
+			}
+		}
+		else {
+			rapPlayer.Initialize (this);
 		}
 	}
 
@@ -127,6 +146,10 @@ public class MusicSequencer : MonoBehaviour {
 			foreach (SequencerTrack sqt in tracks) {
 				sqt.QueueClips ();
 			}
+			if (rapEnabled) {
+				rapPlayer.PlayNextLine ();
+			}
+
 			playbackStartTime = Time.realtimeSinceStartup;
 			yield return new WaitForSeconds (songDuration);
 		}
@@ -152,6 +175,7 @@ public class MusicSequencer : MonoBehaviour {
 
 	[ContextMenu ("Save Song")]
 	public void SaveSong () {
+		OnScreenConsole.Log ("SONG SAVED");
 		if (GameUtility.mySavedSong != null) {
 			GameUtility.mySavedSong.tempo = tempo;
 			GameUtility.mySavedSong.track0 = tracks [0].clips;

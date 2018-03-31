@@ -18,6 +18,37 @@ public static class GameUtility {
 		}
 	}
 
+	private static RapSerialization m_rapLyrics = null;
+	public static RapSerialization rapLyrics {
+		get {
+			if (m_rapLyrics == null) {
+				m_rapLyrics = Resources.Load<RapSerialization> ("RapLyrics");
+			}
+			return m_rapLyrics;
+		}
+	}
+	private static RapSerialization m_rapLyricsWorking = null;
+	public static RapSerialization rapLyricsWorking {
+		get {
+			if (m_rapLyricsWorking == null) {
+				m_rapLyricsWorking = Resources.Load<RapSerialization> ("RapLyricsWorking");
+			}
+			return m_rapLyricsWorking;
+		}
+	}
+
+	private static RhymeLine [] m_rhymeLines = null;
+	public static RhymeLine [] rhymeLines {
+		get {
+			if (m_rhymeLines == null) {
+				List<RhymeLine> tempList = new List<RhymeLine> (Resources.LoadAll<RhymeLine> ("RhymeLines"));
+				tempList.Shuffle ();
+				m_rhymeLines = tempList.ToArray ();
+			}
+			return m_rhymeLines;
+		}
+	}
+
 	private static GameObject m_mapObjectTemplate = null;
 	public static GameObject mapObjectTemplate {
 		get {

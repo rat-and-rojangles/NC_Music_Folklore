@@ -45,7 +45,8 @@ public class OnScreenConsole : MonoBehaviour {
 	/// Write a persistent message to the screen.
 	/// </summary>
 	public static void Log (object message) {
-		staticRef.text += message.ToString () + "\n";
+		string messagePrime = message == null ? "null" : message.ToString ();
+		staticRef.text += messagePrime.ToString () + "\n";
 		if (staticRef.text.Length > 1000) {
 			staticRef.text = staticRef.text.Substring (staticRef.text.Length - 1000);
 		}

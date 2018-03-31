@@ -8,4 +8,5 @@ public class SequencerSongSerialization : ScriptableObject {
 	public SequencerClip [] track1;
 	public SequencerClip [] track2;
 	public SequencerClip [] track3;
+	public RapSerialization rapLyrics;
 }

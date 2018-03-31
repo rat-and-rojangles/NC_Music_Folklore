@@ -1866,6 +1866,16 @@ Prefab:
       propertyPath: loadFromSerialization
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114311214993691818, guid: 56a9dd046658aad4f9ff7e60bc0f2cdc,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114311214993691818, guid: 56a9dd046658aad4f9ff7e60bc0f2cdc,
+        type: 2}
+      propertyPath: rapEnabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56a9dd046658aad4f9ff7e60bc0f2cdc, type: 2}
   m_IsPrefabParent: 0
