@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89ea2c87d14f3ed4483aee1dd574e18c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableBob: 1
   displacement: 0.5
   cycleDuration: 3
 --- !u!114 &114370379665259732

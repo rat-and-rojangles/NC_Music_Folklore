@@ -8,6 +8,12 @@ public class SineBob : MonoBehaviour {
 	public bool bobbing = true;
 	private bool shouldBeFloating = true;
 
+	[Tooltip ("Disable bobbing. Still responds to mouse over.")]
+	/// <summary>
+	/// Disable bobbing. Still responds to mouse over.
+	/// </summary>
+	public bool disableBob = false;
+
 	[Tooltip ("Max vertical displacement when bobbing.")]
 	public float displacement = 1f;
 
@@ -20,7 +26,7 @@ public class SineBob : MonoBehaviour {
 
 	void LateUpdate () {
 		if (shouldBeFloating) {
-			if (bobbing) {
+			if (bobbing && !disableBob) {
 				transform.localPosition = displacement * Vector3.up * Mathf.Sin ((Time.time) / cycleDuration * 2f * Mathf.PI);
 			}
 			else {
