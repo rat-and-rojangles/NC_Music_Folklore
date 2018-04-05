@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7987e53f1350364bb865ccb3b7f0767, type: 3}
+  m_Name: Bench
+  m_EditorClassIdentifier: 
+  m_title: 10
+  m_text: 'Storytelling has been an important practice in African and African American
+    communities since the beginning of time. Through storytelling, questions were
+    answered, history was conveyed, and lifelong lessons were taught and learned.
+    Many stories have been passed down for hundreds of years.  '
+  m_icon: {fileID: 21300000, guid: 0d0c20a9c24ad4743a3fda40cd184cf0, type: 3}
+  m_iconBlurred: {fileID: 21300000, guid: 4e30bedec0c8442fca04509bc21b3787, type: 3}
+  m_voiceOver: {fileID: 8300000, guid: 537a64a01c5427d4d9410e34fc442cac, type: 3}

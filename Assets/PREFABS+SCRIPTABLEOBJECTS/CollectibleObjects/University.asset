@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7987e53f1350364bb865ccb3b7f0767, type: 3}
+  m_Name: University
+  m_EditorClassIdentifier: 
+  m_title: 6
+  m_text: "The first Historically Black Colleges and Universities were founded immediately
+    after the Civil War. Previously, there had been laws prohibiting teaching enslaved
+    people how to read and write. Freed men and women established HBCUs specifically
+    for the education of African Americans during a time of segregated and limited
+    access to schools. Shaw University was North Carolina\u2019s first HBCU. There
+    are 12 HBCUs in North Carolina today. They remain an important part of African
+    American history and education."
+  m_icon: {fileID: 21300000, guid: cae1f4903f4ca5a45bf610ea81d6cd34, type: 3}
+  m_iconBlurred: {fileID: 21300000, guid: 852b93cbfabb03c4b838a19116dd5fde, type: 3}
+  m_voiceOver: {fileID: 8300000, guid: 202e5670a69c9014badfa9a3347fdf44, type: 3}

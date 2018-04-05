@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7987e53f1350364bb865ccb3b7f0767, type: 3}
+  m_Name: Street Light
+  m_EditorClassIdentifier: 
+  m_title: 12
+  m_text: Innovation is the introduction of a new idea or way of doing things.
+  m_icon: {fileID: 21300000, guid: fd76c55af0cc343fda857273f9f5fa3d, type: 3}
+  m_iconBlurred: {fileID: 21300000, guid: 70b58041a6dcf4b01828f66df182cc18, type: 3}
+  m_voiceOver: {fileID: 8300000, guid: 5c0498b64bd5df84d8858a2c320a87e9, type: 3}

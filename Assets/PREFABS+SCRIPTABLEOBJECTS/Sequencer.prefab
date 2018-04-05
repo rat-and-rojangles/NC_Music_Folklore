@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdcc7f5fb6963741814cc53a18c3f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempo: 128
+  tempo: 75
   loopLibrary: {fileID: 0}
   clipButtonPrefab: {fileID: 1841549765509242, guid: 22f3b717dcf20f34bb240cda0912af58,
     type: 2}
@@ -315,6 +315,8 @@ MonoBehaviour:
   - {fileID: 114117391139309710}
   - {fileID: 114777730747332554}
   rapPlayer: {fileID: 114114880058748552}
+  playOnAwake: 0
+  rapEnabled: 0
   loadFromSerialization: 0
 --- !u!114 &114502630213184218
 MonoBehaviour:

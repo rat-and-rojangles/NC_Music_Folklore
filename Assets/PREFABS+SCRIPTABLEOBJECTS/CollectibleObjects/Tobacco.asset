@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7987e53f1350364bb865ccb3b7f0767, type: 3}
+  m_Name: Tobacco
+  m_EditorClassIdentifier: 
+  m_title: 1
+  m_text: 'Beginning in the 1600s, African people were stolen from Africa and brought
+    to North America as slaves, where they were forced to work for white people for
+    no pay, with very poor living conditions. Enslaved people did not have adequate
+    shelter, food, or clothing and had to work long hours every day of the week. Even
+    though they were largely forbidden from playing their traditional music, people
+    used song privately as a way to cope with the tragedy of slavery and to communicate
+    with other people.  '
+  m_icon: {fileID: 21300000, guid: ad3155274b7bd4389aece79eba63e5dc, type: 3}
+  m_iconBlurred: {fileID: 21300000, guid: fc5c65f11bad34951bb16305c6a25bfd, type: 3}
+  m_voiceOver: {fileID: 8300000, guid: 3fa063fa87f93cf408fc625527a9c69a, type: 3}

@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3e35f1f7b627c449ade8266093accb, type: 3}
+  m_Name: If you about your paper
+  m_EditorClassIdentifier: 
+  m_text: Ok if you about your paper put your hands up in the sky
+  m_rhymeIndex: 1
+  m_audio: {fileID: 8300000, guid: ca77a6a36a8bd41128d28ebbf0cd0f4e, type: 3}

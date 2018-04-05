@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7987e53f1350364bb865ccb3b7f0767, type: 3}
+  m_Name: Spray Paint
+  m_EditorClassIdentifier: 
+  m_title: 14
+  m_text: Graffiti is a style of art that was creatively developed by youth living
+    in cities. They used spray paint to create art on walls, subways, and other landmarks.
+    Graffiti art is a way to visually express an idea or thought and became an important
+    part of hip hop culture.
+  m_icon: {fileID: 21300000, guid: 230bb22cf2f0543e59afe71e0807771f, type: 3}
+  m_iconBlurred: {fileID: 21300000, guid: b0c10def70d324671899291f41c87933, type: 3}
+  m_voiceOver: {fileID: 8300000, guid: 7d0ab8935fe10dd42930cd2ce8782707, type: 3}

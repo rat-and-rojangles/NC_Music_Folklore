@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7987e53f1350364bb865ccb3b7f0767, type: 3}
+  m_Name: Water Fountain
+  m_EditorClassIdentifier: 
+  m_title: 3
+  m_text: During segregation, white people cruelly limited the rights of African Americans
+    treated them as second-class citizens. Not only were the races separated physically,
+    but they were separated socially and economically as well.
+  m_icon: {fileID: 21300000, guid: 6b954ede1a050b74b8c760cf1c824d3b, type: 3}
+  m_iconBlurred: {fileID: 21300000, guid: 651251eee956bb9489c950ebd69f90b1, type: 3}
+  m_voiceOver: {fileID: 8300000, guid: d18016bfd05cf7f48bce3e1056edcd4d, type: 3}
