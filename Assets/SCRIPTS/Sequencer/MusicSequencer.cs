@@ -147,7 +147,7 @@ public class MusicSequencer : MonoBehaviour {
 				sqt.QueueClips ();
 			}
 			if (rapEnabled) {
-				rapPlayer.PlayNextLine ();
+				rapPlayer.QueueClips ();
 			}
 
 			playbackStartTime = Time.realtimeSinceStartup;

@@ -27,15 +27,6 @@ public static class GameUtility {
 			return m_rapLyrics;
 		}
 	}
-	private static RapSerialization m_rapLyricsWorking = null;
-	public static RapSerialization rapLyricsWorking {
-		get {
-			if (m_rapLyricsWorking == null) {
-				m_rapLyricsWorking = Resources.Load<RapSerialization> ("RapLyricsWorking");
-			}
-			return m_rapLyricsWorking;
-		}
-	}
 
 	private static RhymeLine [] m_rhymeLines = null;
 	public static RhymeLine [] rhymeLines {
@@ -106,6 +97,12 @@ public static class GameUtility {
 				m_blankPageObject = new CollectibleObject (collectibleObjectCatalog.blankPage);
 			}
 			return m_blankPageObject;
+		}
+	}
+
+	public static Material itemMaterialEditorOnly {
+		get {
+			return Resources.Load<Material> ("ItemMaterial");
 		}
 	}
 }

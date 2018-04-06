@@ -32,16 +32,16 @@ public class LyricDragCursor : MonoBehaviour {
 		visual.SetActive (false);
 	}
 
-	private static LyricDragCursor m_staticRef = null;
-	public static LyricDragCursor staticRef {
-		get { return m_staticRef; }
+	private static LyricDragCursor m_current = null;
+	public static LyricDragCursor current {
+		get { return m_current; }
 	}
 
 	void Awake () {
-		m_staticRef = this;
+		m_current = this;
 	}
 	void OnDestroy () {
-		m_staticRef = null;
+		m_current = null;
 	}
 
 	private RectTransform m_rectTransform = null;

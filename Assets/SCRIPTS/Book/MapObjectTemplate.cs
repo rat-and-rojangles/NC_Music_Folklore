@@ -16,7 +16,10 @@ public class MapObjectTemplate : MonoBehaviour {
 	[ContextMenu ("Show Image")]
 	void ShowImage () {
 		if (targetObject != null) {
-			GetComponent<MeshRenderer> ().material.mainTexture = targetObject.icon.texture;
+			MeshRenderer meshRenderer = GetComponent<MeshRenderer> ();
+			Material freshMaterial = new Material (GameUtility.itemMaterialEditorOnly);
+			freshMaterial.mainTexture = targetObject.icon.texture;
+			meshRenderer.material = freshMaterial;
 		}
 	}
 

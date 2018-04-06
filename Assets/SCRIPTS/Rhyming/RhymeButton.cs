@@ -78,7 +78,7 @@ public class RhymeButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 		if (!myRhymeLyrics.sequencerPlaying) {
 			dragging = true;
 			BeginFlash ();
-			LyricDragCursor.staticRef.Activate (this);
+			LyricDragCursor.current.Activate (this);
 		}
 	}
 
@@ -90,7 +90,7 @@ public class RhymeButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 		if (dragging) {
 			dragging = false;
 			EndFlash ();
-			LyricDragCursor.staticRef.Deactivate ();
+			LyricDragCursor.current.Deactivate ();
 			if (mousedOver != null && mousedOver != this) {
 				RhymeLine temp = rhymeLine;
 				rhymeLine = mousedOver.rhymeLine;
